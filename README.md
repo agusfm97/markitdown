@@ -23,7 +23,7 @@ Dibuat untuk manfaat bersama — gratis untuk semua orang, di-deploy melalui [St
 5. Pilih repositori, branch, dan file utama: `app.py`
 6. Klik **Deploy**
 
-Aplikasi akan online di URL seperti: `https://namarepo-namauser.streamlit.app`
+Aplikasi akan online di URL seperti: `(https://markitdown-app.streamlit.app/)`
 
 ## Struktur Proyek
 
