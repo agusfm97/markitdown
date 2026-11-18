@@ -10,6 +10,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
+# ==================== CSS STYLING ====================
 st.markdown("""
 <style>
 #MainMenu {visibility: hidden;}
@@ -18,7 +19,7 @@ header {visibility: hidden;}
 
 .hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
     border-radius: 20px;
     color: white;
     text-align: center;
@@ -26,13 +27,13 @@ header {visibility: hidden;}
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 800;
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.5rem 0;
 }
 
 .hero p {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     margin: 0;
     opacity: 0.9;
 }
@@ -46,28 +47,29 @@ header {visibility: hidden;}
 
 .feature-card {
     flex: 1;
-    min-width: 200px;
+    min-width: 180px;
     background: #1e1e1e;
     border: 1px solid #333;
     border-radius: 12px;
-    padding: 1.5rem;
+    padding: 1.25rem;
     text-align: center;
 }
 
 .feature-card .icon {
     font-size: 2rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+    display: block;
 }
 
 .feature-card h3 {
     color: #667eea;
-    margin: 0 0 0.5rem 0;
-    font-size: 1.1rem;
+    margin: 0 0 0.25rem 0;
+    font-size: 1rem;
 }
 
 .feature-card p {
     color: #888;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     margin: 0;
 }
 
@@ -75,14 +77,14 @@ header {visibility: hidden;}
     background: #1e1e1e;
     border: 2px dashed #333;
     border-radius: 16px;
-    padding: 3rem 2rem;
+    padding: 2.5rem 2rem;
     text-align: center;
     margin-bottom: 2rem;
 }
 
 .upload-section h2 {
     color: #fff;
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.5rem 0;
 }
 
 .upload-section p {
@@ -90,59 +92,66 @@ header {visibility: hidden;}
     margin: 0;
 }
 
-.stats {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-}
-
-.stat-card {
-    flex: 1;
-    min-width: 150px;
+.result-box {
     background: #1e1e1e;
     border: 1px solid #333;
     border-radius: 12px;
-    padding: 1.5rem;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.stat-card {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1rem;
     text-align: center;
 }
 
 .stat-value {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #667eea;
     display: block;
 }
 
 .stat-label {
+    font-size: 0.8rem;
     color: #888;
-    font-size: 0.85rem;
     margin-top: 0.25rem;
     display: block;
 }
 
-.result-box {
-    background: #1e1e1e;
-    border: 1px solid #333;
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
+.warning-box {
+    background: #3e2723;
+    border: 1px solid #5d4037;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    color: #ffccbc;
+}
+
+.warning-box b {
+    color: #ffab91;
+}
+
+.success-box {
+    background: #1b5e20;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
 }
 
 .footer {
     text-align: center;
     padding: 2rem;
     color: #666;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     border-top: 1px solid #333;
     margin-top: 2rem;
 }
 
-/* Hide Streamlit default elements */
-.stDeployButton {visibility: hidden;}
-.stDecoration {visibility: hidden;}
-
-/* Primary button */
 .stButton > button[kind="primary"] {
     background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
     border: none;
@@ -157,7 +166,6 @@ header {visibility: hidden;}
     filter: brightness(1.1);
 }
 
-/* Download button */
 .stDownloadButton > button {
     background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -170,50 +178,8 @@ header {visibility: hidden;}
 .stDownloadButton > button:hover {
     filter: brightness(1.1);
 }
-
-/* Warning box */
-.warning-box {
-    background: #3e2723;
-    border: 1px solid #5d4037;
-    border-radius: 8px;
-    padding: 1rem;
-    margin: 1rem 0;
-    color: #ffccbc;
-}
-
-.warning-box b {
-    color: #ffab91;
-}
-
-/* Success box */
-.success-box {
-    background: #1b5e20;
-    color: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    margin: 1rem 0;
-}
-
-/* Stat card */
-.stat-card {
-    background: #1e1e1e;
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
-}
-
-.stat-value {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #667eea;
-}
-
-.stat-label {
-    font-size: 0.8rem;
-    color: #888;
-    margin-top: 0.25rem;
-}
+</style>
+""", unsafe_allow_html=True)
 
 # ==================== INISIALISASI KONVERTER ====================
 @st.cache_resource
@@ -222,7 +188,7 @@ def get_converter():
 
 converter = get_converter()
 
-# Format stabil di Streamlit Cloud
+# Format yang stabil di Streamlit Cloud
 STABLE_FORMATS = [
     "docx", "doc", "pptx", "ppt", "xlsx", "xls",
     "html", "htm", "txt", "csv", "json", "xml", "epub",
@@ -256,23 +222,23 @@ st.markdown("""
 st.markdown("""
 <div class="feature-grid">
     <div class="feature-card">
-        <div class="icon">📘</div>
+        <span class="icon">📘</span>
         <h3>Word</h3>
         <p>DOC, DOCX</p>
     </div>
     <div class="feature-card">
-        <div class="icon">📊</div>
+        <span class="icon">📊</span>
         <h3>Excel</h3>
         <p>XLS, XLSX</p>
     </div>
     <div class="feature-card">
-        <div class="icon">📽️</div>
+        <span class="icon">📽️</span>
         <h3>PowerPoint</h3>
         <p>PPT, PPTX</p>
     </div>
     <div class="feature-card">
-        <div class="icon">🌐</div>
-        <h3>HTML & Web</h3>
+        <span class="icon">🌐</span>
+        <h3>HTML</h3>
         <p>HTML, HTM</p>
     </div>
 </div>
@@ -281,24 +247,24 @@ st.markdown("""
 st.markdown("""
 <div class="feature-grid">
     <div class="feature-card">
-        <div class="icon">📝</div>
+        <span class="icon">📝</span>
         <h3>Teks & Data</h3>
         <p>TXT, CSV, JSON, XML</p>
     </div>
     <div class="feature-card">
-        <div class="icon">📚</div>
+        <span class="icon">📚</span>
         <h3>EPUB</h3>
-        <p>E-book format</p>
+        <p>E-book</p>
     </div>
     <div class="feature-card">
-        <div class="icon">🗜️</div>
+        <span class="icon">🗜️</span>
         <h3>ZIP</h3>
-        <p>Arsip terkompresi</p>
+        <p>Arsip</p>
     </div>
     <div class="feature-card">
-        <div class="icon">📄</div>
+        <span class="icon">📄</span>
         <h3>PDF</h3>
-        <p>*terbatas di cloud gratis</p>
+        <p>*terbatas</p>
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -415,6 +381,4 @@ st.markdown("""
     Deploy gratis di <a href="https://streamlit.io/cloud" target="_blank" style="color: #667eea;">Streamlit Community Cloud</a>.<br>
     Semoga bermanfaat dan menjadi pahala bagi kita semua. Amin. 🤲
 </div>
-""", unsafe_allow_html=True)
-</style>
 """, unsafe_allow_html=True)
